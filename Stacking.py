@@ -69,7 +69,6 @@ class Ensemble(object):
         self.base_models = base_models
 
     def fit_predict(self, trainDf, testDf):
-        trainDf['price_doc'] = trainDf['price_doc'] * 0.97 # multiplier
         X = trainDf.drop(['price_doc', 'w'], 1).values
         y = trainDf['price_doc'].values
         w = trainDf['w'].values
@@ -110,10 +109,8 @@ class Ensemble(object):
         return y_pred
 
 if __name__ == "__main__":
-    # trainDf = pd.read_csv('train_featured.csv')
-    # testDf = pd.read_csv('test_featured.csv')
-    trainDf = pd.read_csv('ReynaldoTrain.csv')
-    testDf = pd.read_csv('ReynaldoTest.csv')
+    trainDf = pd.read_csv('train_featured.csv')
+    testDf = pd.read_csv('test_featured.csv')
 
     params1 = {'eta':0.05, 'max_depth':5, 'subsample':0.8, 'colsample_bytree':0.8, 'min_child_weight':1,
               'gamma':0, 'silent':1, 'objective':'reg:linear', 'eval_metric':'rmse'}
