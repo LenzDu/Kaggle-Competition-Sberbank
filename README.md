@@ -8,5 +8,6 @@ Top 1% rankings (22/3270) code sharing for Kaggle competition Sberbank Russian H
 * lightGBM.py: lightgbm model for ensembling
 * Stacking.py: model stacking (final model)
 
-Final pipeline: Raw data → Data.py → Stacking.py. Model.py, BaseModel.py and lightGBM.py are not used for the final output. \
+Final pipeline: Raw data → Data.py → Stacking.py. \
+Model.py, BaseModel.py and lightGBM.py are not used for the final output. \
 Original data set can be downloaded from the competition website.
